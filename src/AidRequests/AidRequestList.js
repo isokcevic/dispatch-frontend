@@ -1,24 +1,19 @@
 import * as React from "react";
 import {
     BooleanField,
-    Create,
     Datagrid,
     DateField,
     Edit,
     FunctionField,
     List,
-    Show,
     SimpleForm,
     TextField,
-    TextInput,
-} from 'react-admin';
-
+    TextInput
+} from "react-admin";
+import RichTextInput from "ra-input-rich-text";
 import { Typography, Box, Toolbar } from '@material-ui/core';
 
-import RichTextInput from 'ra-input-rich-text';
-
-
-export const AidRequestsList = props => (
+const AidRequestList = props => (
     <List {...props}>
         <Datagrid expand={AidPanel}>
             <TextField source="assigned_dispatcher" />
@@ -36,7 +31,7 @@ export const AidRequestsList = props => (
     </List>
 );
 
-export const AidPanel = props => (
+const AidPanel = props => (
     <Edit {...props} title="">
         <SimpleForm>
             <TextInput source="location" />
@@ -47,27 +42,4 @@ export const AidPanel = props => (
     </Edit>
 );
 
-export const AidRequestsCreate = props => (
-<Create {...props}>
-    <SimpleForm>
-        <TextInput source="location" />
-        <TextInput multiline source="description" />
-        <TextInput source="contact_name" />
-        <TextInput source="contact_phone" />
-        <TextInput source="submitter_email" />
-        <TextInput source="volunteer_assigned" />
-    </SimpleForm>
-</Create>
-);
-
-export const AidRequestEdit = props => (
-<Edit {...props}>
-    <SimpleForm>
-        <TextInput source="location" />
-        <TextInput multiline source="description" />
-        <TextInput source="contact_name" />
-        <TextInput source="contact_phone" />
-        <TextInput source="volunteer_assigned" />
-    </SimpleForm>
-</Edit>
-);
+export default AidRequestList;
