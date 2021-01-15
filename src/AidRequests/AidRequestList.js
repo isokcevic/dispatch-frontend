@@ -5,8 +5,8 @@ import {
     DateField,
     Edit,
     Filter,
-    FunctionField,
     List,
+    ReferenceField,
     TextField,
     TextInput
 } from "react-admin";
@@ -19,7 +19,9 @@ const AidRequestList = props => (
             <DateField source="published_at" locales="hr-HR" showTime />
             <TextField source="status" />
             <BooleanField source="fulfilled" />
-            <TextField source="assigned_dispatcher" />
+            <ReferenceField source="assigned_dispatcher" reference="coordinators">
+                <TextField source="name" />
+            </ReferenceField>
             <TextField source="volunteer_assigned" />
             <TextField source="location" />
             <TextField source="contact_name" />

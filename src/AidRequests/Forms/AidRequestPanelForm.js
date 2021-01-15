@@ -1,5 +1,5 @@
 import * as React from "react";
-import {DeleteButton, FormWithRedirect, SaveButton, TextInput} from "react-admin";
+import {DeleteButton, FormWithRedirect, SaveButton, ReferenceInput, SelectInput, TextInput} from "react-admin";
 import {Grid, Toolbar} from "@material-ui/core";
 import RichTextInput from "ra-input-rich-text";
 import StatusSelect from "../Components/StatusSelect";
@@ -18,7 +18,10 @@ const renderForm = formProps => (
                         <StatusSelect />
                     </Grid>
                     <Grid item>
-                        <TextInput source="assigned_dispatcher" resource="aid-requests" />
+                        <ReferenceInput source="assigned_dispatcher" reference="coordinators">
+                            <SelectInput optionText="name" />
+                        </ReferenceInput>
+                        {/*<TextInput source="assigned_dispatcher" resource="aid-requests" />*/}
                     </Grid>
                     <Grid item>
                         <TextInput source="volunteer_assigned" resource="aid-requests" />
