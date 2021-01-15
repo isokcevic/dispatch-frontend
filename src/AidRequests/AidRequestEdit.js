@@ -1,9 +1,19 @@
-import {Edit, SimpleForm, TextInput} from "react-admin";
+import { Edit, SelectInput, SimpleForm, TextInput} from "react-admin";
 import * as React from "react";
 
 const AidRequestEdit = props => (
     <Edit {...props}>
         <SimpleForm>
+            <SelectInput source="status" choices={[
+                { id: 'novo', name: 'Novo' },
+                { id: 'provjereno', name: 'Provjereno' },
+                { id: 'rizicno_opasno', name: 'Opasno' },
+                { id: 'preuzeto', name: 'Preuzeto' },
+                { id: 'u_izvrsavanju', name: 'U izvršavanju' },
+                { id: 'parcijalno_rijeseno', name: 'Djelomično riješeno' },
+                { id: 'treba ponoviti', name: 'Treba ponoviti' },
+                { id: 'zavrseno', name: 'Završeno' },
+            ]} />
             <TextInput source="location" />
             <TextInput multiline source="description" />
             <TextInput source="contact_name" />

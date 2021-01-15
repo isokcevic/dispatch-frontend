@@ -6,7 +6,7 @@ import {
     Edit,
     Filter,
     FunctionField,
-    List,
+    List, SelectInput,
     SimpleForm,
     TextField,
     TextInput
@@ -44,6 +44,16 @@ const AidRequestFilter = (props) => (
 const AidPanel = props => (
     <Edit {...props} title="">
         <SimpleForm>
+            <SelectInput source="status" choices={[
+                { id: 'novo', name: 'Novo' },
+                { id: 'provjereno', name: 'Provjereno' },
+                { id: 'rizicno_opasno', name: 'Opasno' },
+                { id: 'preuzeto', name: 'Preuzeto' },
+                { id: 'u_izvrsavanju', name: 'U izvršavanju' },
+                { id: 'parcijalno_rijeseno', name: 'Djelomično riješeno' },
+                { id: 'treba ponoviti', name: 'Treba ponoviti' },
+                { id: 'zavrseno', name: 'Završeno' },
+            ]} />
             <TextInput source="location" />
             <TextInput source="contact_name" />
             <TextInput source="contact_phone" />
