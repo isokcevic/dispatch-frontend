@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
+import { AidRequestsCreate, AidRequestEdit, AidRequestsList } from './aid-requests'
+import strapiProvider from 'ra-strapi-rest';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const dataProvider = strapiProvider('http://localhost:1337');
+const App = () => (
+    <Admin dataProvider={dataProvider}>
+        <Resource name="aid-requests" list={AidRequestsList} edit={AidRequestEdit} create={AidRequestsCreate} />
+    </Admin>
+)
 
 export default App;
