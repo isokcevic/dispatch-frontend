@@ -4,6 +4,7 @@ import {
     Datagrid,
     DateField,
     Edit,
+    Filter,
     FunctionField,
     List,
     SimpleForm,
@@ -14,7 +15,7 @@ import RichTextInput from "ra-input-rich-text";
 import { Typography, Box, Toolbar } from '@material-ui/core';
 
 const AidRequestList = props => (
-    <List {...props}>
+    <List {...props} filters={<AidRequestFilter />} >
         <Datagrid expand={AidPanel}>
             <TextField source="assigned_dispatcher" />
             <TextField source="status" />
@@ -29,6 +30,15 @@ const AidRequestList = props => (
             <TextField source="comments" />
         </Datagrid>
     </List>
+);
+
+const AidRequestFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="assigned_dispatcher" source="assigned_dispatcher" defaultValue="" />
+        <TextInput label="location" source="location" defaultValue="" />
+        <TextInput label="contact_name" source="contact_name" defaultValue="" />
+        <TextInput label="contact_phone" source="contact_phone" defaultValue="" />
+    </Filter>
 );
 
 const AidPanel = props => (
