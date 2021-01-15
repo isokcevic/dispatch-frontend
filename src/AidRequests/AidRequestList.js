@@ -11,6 +11,7 @@ import {
     TextInput
 } from "react-admin";
 import AidRequestPanelForm from "./Forms/AidRequestPanelForm";
+import DescriptionField from "./Components/DescriptionField";
 
 const AidRequestList = props => (
     <List {...props} filters={<AidRequestFilter />} >
@@ -23,7 +24,7 @@ const AidRequestList = props => (
             <FunctionField label="Coordinates" render={r => `${r.locationLat} ${r.locationLon}`} />
             <TextField source="contact_name" />
             <TextField source="contact_phone" />
-            <TextField source="description" />
+            <DescriptionField source="description" />
             <TextField source="volunteer_assigned" />
             <TextField source="comments" />
         </Datagrid>
