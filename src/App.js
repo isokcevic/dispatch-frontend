@@ -1,12 +1,29 @@
 import * as React from "react";
-import { Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
-import AidRequests from './AidRequests'
+import { fetchUtils, Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
 import strapiProvider from 'ra-strapi-rest';
+import authProvider from "./authProvider";
+import Cookies from "./helpers/Cookies";
 
-const dataProvider = strapiProvider('http://localhost:1337');
+import AidRequests from './AidRequests'
+
+const httpClient = (url, options = {}) => {
+    if (!options.headers) {
+        options.headers = new Headers({ Accept: 'application/json' });
+    }
+    const token = Cookies.getCookie('token')
+    options.headers.set('Authorization', `Bearer ${token}`);
+    return fetchUtils.fetchJson(url, options);
+}
+
+
+/** @todo load api url from config.. */
+const dataProvider = strapiProvider('http://localhost:1337', httpClient);
+
 const App = () => (
-    <Admin dataProvider={dataProvider}>
+    /** @TODO - CRITICAL - auth provider currently logs in to admin; implement proper roles then fix this */
+    <Admin dataProvider={dataProvider} authProvider={authProvider}>
         <Resource name="aid-requests" {...AidRequests} />
+        <Resource name="coordinators" list={ListGuesser} />
     </Admin>
 )
 
