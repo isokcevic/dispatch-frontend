@@ -16,17 +16,15 @@ import DescriptionField from "./Components/DescriptionField";
 const AidRequestList = props => (
     <List {...props} filters={<AidRequestFilter />} >
         <Datagrid expand={AidRequestPanel}>
-            <TextField source="assigned_dispatcher" />
-            <TextField source="status" />
             <DateField source="published_at" locales="hr-HR" showTime />
+            <TextField source="status" />
             <BooleanField source="fulfilled" />
+            <TextField source="assigned_dispatcher" />
+            <TextField source="volunteer_assigned" />
             <TextField source="location" />
-            <FunctionField label="Coordinates" render={r => `${r.locationLat} ${r.locationLon}`} />
             <TextField source="contact_name" />
             <TextField source="contact_phone" />
             <DescriptionField source="description" />
-            <TextField source="volunteer_assigned" />
-            <TextField source="comments" />
         </Datagrid>
     </List>
 );
