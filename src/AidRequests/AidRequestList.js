@@ -14,7 +14,7 @@ import AidRequestPanelForm from "./Forms/AidRequestPanelForm";
 import DescriptionField from "./Components/DescriptionField";
 
 const AidRequestList = props => (
-    <List {...props} filters={<AidRequestFilter />} >
+    <List {...props} bulkActionButtons={false} filters={<AidRequestFilter />} >
         <Datagrid expand={AidRequestPanel}>
             <DateField source="published_at" locales="hr-HR" showTime />
             <TextField source="status" />

@@ -49,7 +49,6 @@ const renderForm = formProps => (
                     saving={formProps.saving}
                     handleSubmitWithRedirect={formProps.handleSubmitWithRedirect}
                 />
-                <DeleteButton record={formProps.record} />
             </Grid>
         </Toolbar>
     </form>
