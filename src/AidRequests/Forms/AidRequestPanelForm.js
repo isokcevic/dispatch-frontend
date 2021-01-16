@@ -12,7 +12,7 @@ const AidRequestPanelForm = props => (
 const renderForm = formProps => (
     <form>
         <Grid container>
-            <Grid container xs={6}>
+            <Grid item xs={6}>
                 <Grid container spacing={1}>
                     <Grid item>
                         <StatusSelect />
@@ -39,7 +39,7 @@ const renderForm = formProps => (
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid container xs={6} spacing={1}>
+            <Grid item xs={6}>
                 <RichTextInput source={"description"} resource={"aid-requests"} />
             </Grid>
         </Grid>
