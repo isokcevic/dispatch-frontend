@@ -21,7 +21,6 @@ const renderForm = formProps => (
                         <ReferenceInput source="assigned_dispatcher" reference="coordinators">
                             <SelectInput optionText="name" />
                         </ReferenceInput>
-                        {/*<TextInput source="assigned_dispatcher" resource="aid-requests" />*/}
                     </Grid>
                     <Grid item>
                         <TextInput source="volunteer_assigned" resource="aid-requests" />

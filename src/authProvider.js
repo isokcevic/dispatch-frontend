@@ -3,7 +3,9 @@ import Cookies from './helpers/Cookies'
 /** @todo DO NOT USE ADMIN */
 const authProvider = {
     login: ({ username, password }) => {
+        // admin endpoint uses email + password; normal login uses identifier + password
         const email = username // strapi expects 'identifier' and not 'username'
+        /** @todo DO NOT USE ADMIN */
         const request = new Request('http://localhost:1337/admin/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
@@ -18,6 +20,7 @@ const authProvider = {
             })
             .then(response => {
                 Cookies.setCookie('token', response.data.token, 1);
+                /** @todo see how role works on non-admin account */
                 Cookies.setCookie('role', response.data.user.roles[0].name, 1);
             });
     },

@@ -1,6 +1,8 @@
 import { Edit, SelectInput, SimpleForm, TextInput} from "react-admin";
 import * as React from "react";
 
+/** @todo: move to forms, and use select component for statuses - if this is to be used at all */
+/** @deprecated */
 const AidRequestEdit = props => (
     <Edit {...props}>
         <SimpleForm>

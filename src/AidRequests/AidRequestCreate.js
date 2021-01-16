@@ -1,6 +1,7 @@
 import {Create, SimpleForm, TextInput} from "react-admin";
 import * as React from "react";
 
+/** @todo use grid layout, more fields */
 const AidRequestCreate = props => (
     <Create {...props}>
         <SimpleForm>
