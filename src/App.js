@@ -17,7 +17,7 @@ const httpClient = (url, options = {}) => {
 
 
 /** @todo load api url from config.. */
-const dataProvider = strapiProvider('http://localhost:1337', httpClient);
+const dataProvider = strapiProvider(process.env.REACT_APP_API_URL, httpClient);
 
 const App = () => (
     /** @TODO - CRITICAL - auth provider currently logs in to admin; implement proper roles then fix this */

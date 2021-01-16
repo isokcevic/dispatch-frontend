@@ -3,10 +3,9 @@ import Cookies from './helpers/Cookies'
 /** @todo DO NOT USE ADMIN */
 const authProvider = {
     login: ({ username, password }) => {
-        // admin endpoint uses email + password; normal login uses identifier + password
-        const email = username // strapi expects 'identifier' and not 'username'
+        const email = username;
         /** @todo DO NOT USE ADMIN */
-        const request = new Request('http://localhost:1337/admin/login', {
+        const request = new Request(process.env.REACT_APP_API_URL + '/admin/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: new Headers({ 'Content-Type': 'application/json'})
