@@ -1,5 +1,7 @@
 import * as React from "react";
 import { BooleanField, Datagrid, Edit, List, TextField } from "react-admin";
+import {ColorField} from "react-admin-color-input";
+
 import PanelForm from "./Forms/PanelForm";
 
 const EntryCategoriesList = props => (
@@ -10,6 +12,7 @@ const EntryCategoriesList = props => (
             <TextField source="type_name" />
             <TextField source="add_entry_label" />
             <BooleanField source="available_in_public_menu" />
+            <ColorField source="category_color_hex" />
         </Datagrid>
     </List>
 );

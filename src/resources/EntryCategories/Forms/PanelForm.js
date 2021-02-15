@@ -1,6 +1,7 @@
 import * as React from "react";
 import {FormWithRedirect, SaveButton, TextInput, BooleanInput, SimpleForm} from "react-admin";
 import {Grid, Toolbar} from "@material-ui/core";
+import {ColorInput} from "react-admin-color-input";
 
 const PanelForm = props => (
     <FormWithRedirect {...props} render={renderForm} />
@@ -32,7 +33,7 @@ const renderForm = formProps => (
         </Grid>
         <Grid container>
             <Grid item xs={4}>
-                <TextInput source="category_color_hex" />
+                <ColorInput source="category_color_hex" picker="Chrome"/>
             </Grid>
         </Grid>
         <Toolbar>

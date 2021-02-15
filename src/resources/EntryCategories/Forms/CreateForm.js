@@ -1,4 +1,5 @@
 import {BooleanInput, SimpleForm, TextInput} from "react-admin";
+import {ColorInput} from "react-admin-color-input";
 
 const CreateForm = props => (
     <SimpleForm {...props}>
@@ -8,7 +9,7 @@ const CreateForm = props => (
         <TextInput source="menu_title" />
         <TextInput source="plural_title" />
         <BooleanInput source="available_in_public_menu" />
-        <TextInput source="category_color_hex" />
+        <ColorInput source="category_color_hex" picker="Chrome" />
     </SimpleForm>
 );
 
