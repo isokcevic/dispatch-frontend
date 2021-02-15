@@ -4,7 +4,7 @@ import strapiProvider from 'ra-strapi-rest';
 import authProvider from "./authProvider";
 import Cookies from "./helpers/Cookies";
 
-import AidRequests from './AidRequests'
+import Entries from './Entries'
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -22,7 +22,7 @@ const dataProvider = strapiProvider(process.env.REACT_APP_API_URL, httpClient);
 const App = () => (
     /** @TODO - CRITICAL - auth provider currently logs in to admin; implement proper roles then fix this */
     <Admin dataProvider={dataProvider} authProvider={authProvider}>
-        <Resource name="entries" {...AidRequests} />
+        <Resource name="entries" {...Entries} />
         <Resource name="coordinators" list={ListGuesser} />
     </Admin>
 )

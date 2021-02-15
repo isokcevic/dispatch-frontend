@@ -2,7 +2,7 @@ import {Create, SimpleForm, TextInput} from "react-admin";
 import * as React from "react";
 
 /** @todo use grid layout, more fields */
-const AidRequestCreate = props => (
+const EntryCreate = props => (
     <Create {...props}>
         <SimpleForm>
             <TextInput source="location" />
@@ -15,4 +15,4 @@ const AidRequestCreate = props => (
     </Create>
 );
 
-export default AidRequestCreate;
+export default EntryCreate;

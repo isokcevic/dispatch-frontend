@@ -10,12 +10,12 @@ import {
     TextField,
     TextInput
 } from "react-admin";
-import AidRequestPanelForm from "./Forms/AidRequestPanelForm";
+import EntryPanelForm from "./Forms/EntryPanelForm";
 import DescriptionField from "./Components/DescriptionField";
 
-const AidRequestList = props => (
-    <List {...props} bulkActionButtons={false} filters={<AidRequestFilter />} >
-        <Datagrid expand={AidRequestPanel}>
+const EntriesList = props => (
+    <List {...props} bulkActionButtons={false} filters={<EntriesFilter />} >
+        <Datagrid expand={EntriesPanel}>
             <DateField source="published_at" locales="hr-HR" showTime />
             <TextField source="status" />
             <BooleanField source="fulfilled" />
@@ -31,7 +31,7 @@ const AidRequestList = props => (
     </List>
 );
 
-const AidRequestFilter = (props) => (
+const EntriesFilter = (props) => (
     <Filter {...props}>
         <TextInput label="assigned_dispatcher" source="assigned_dispatcher" defaultValue="" />
         <TextInput label="location" source="location" defaultValue="" />
@@ -40,10 +40,10 @@ const AidRequestFilter = (props) => (
     </Filter>
 );
 
-const AidRequestPanel = props => (
+const EntriesPanel = props => (
     <Edit {...props} title="" >
-        <AidRequestPanelForm />
+        <EntryPanelForm />
     </Edit>
 );
 
-export default AidRequestList;
+export default EntriesList;

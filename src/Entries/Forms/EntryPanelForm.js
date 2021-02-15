@@ -5,7 +5,7 @@ import RichTextInput from "ra-input-rich-text";
 import StatusSelect from "../Components/StatusSelect";
 
 
-const AidRequestPanelForm = props => (
+const EntryPanelForm = props => (
     <FormWithRedirect {...props} render={renderForm} />
 );
 
@@ -23,23 +23,23 @@ const renderForm = formProps => (
                         </ReferenceInput>
                     </Grid>
                     <Grid item>
-                        <TextInput source="volunteer_assigned" resource="aid-requests" />
+                        <TextInput source="volunteer_assigned" resource="entries" />
                     </Grid>
                 </Grid>
                 <Grid container spacing={1}>
                     <Grid item>
-                        <TextInput source="location" resource="aid-requests" />
+                        <TextInput source="location" resource="entries" />
                     </Grid>
                     <Grid item>
-                        <TextInput source="contact_name" resource="aid-requests" />
+                        <TextInput source="contact_name" resource="entries" />
                     </Grid>
                     <Grid item>
-                        <TextInput source="contact_phone" resource="aid-requests" />
+                        <TextInput source="contact_phone" resource="entries" />
                     </Grid>
                 </Grid>
             </Grid>
             <Grid item xs={6}>
-                <RichTextInput source={"description"} resource={"aid-requests"} />
+                <RichTextInput source={"description"} resource={"entries"} />
             </Grid>
         </Grid>
         <Toolbar>
@@ -53,4 +53,4 @@ const renderForm = formProps => (
     </form>
 );
 
-export default AidRequestPanelForm;
+export default EntryPanelForm;
