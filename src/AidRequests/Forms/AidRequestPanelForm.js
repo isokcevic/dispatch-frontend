@@ -18,7 +18,7 @@ const renderForm = formProps => (
                         <StatusSelect />
                     </Grid>
                     <Grid item>
-                        <ReferenceInput source="assigned_dispatcher" reference="coordinators">
+                        <ReferenceInput source="assigned_coordinator" reference="coordinators">
                             <SelectInput optionText="name" />
                         </ReferenceInput>
                     </Grid>

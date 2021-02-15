@@ -22,7 +22,7 @@ const dataProvider = strapiProvider(process.env.REACT_APP_API_URL, httpClient);
 const App = () => (
     /** @TODO - CRITICAL - auth provider currently logs in to admin; implement proper roles then fix this */
     <Admin dataProvider={dataProvider} authProvider={authProvider}>
-        <Resource name="aid-requests" {...AidRequests} />
+        <Resource name="entries" {...AidRequests} />
         <Resource name="coordinators" list={ListGuesser} />
     </Admin>
 )

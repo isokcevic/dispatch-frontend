@@ -19,7 +19,7 @@ const AidRequestList = props => (
             <DateField source="published_at" locales="hr-HR" showTime />
             <TextField source="status" />
             <BooleanField source="fulfilled" />
-            <ReferenceField source="assigned_dispatcher" reference="coordinators">
+            <ReferenceField source="assigned_coordinator" reference="coordinators">
                 <TextField source="name" />
             </ReferenceField>
             <TextField source="volunteer_assigned" />
