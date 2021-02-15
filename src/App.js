@@ -5,6 +5,7 @@ import authProvider from "./authProvider";
 import Cookies from "./helpers/Cookies";
 
 import Entries from './resources/Entries';
+import EntryCategories from "./resources/EntryCategories";
 import Coordinators from './resources/Coordinators';
 
 const httpClient = (url, options = {}) => {
@@ -24,6 +25,7 @@ const App = () => (
     /** @TODO - CRITICAL - auth provider currently logs in to admin; implement proper roles then fix this */
     <Admin dataProvider={dataProvider} authProvider={authProvider}>
         <Resource name="entries" {...Entries} />
+        <Resource name="entry-categories" {...EntryCategories} />
         <Resource name="coordinators" {...Coordinators} />
     </Admin>
 )
