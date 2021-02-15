@@ -1,5 +1,5 @@
 import * as React from "react";
-import { fetchUtils, Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
+import { fetchUtils, Admin, Resource } from 'react-admin';
 import strapiProvider from 'ra-strapi-rest';
 import authProvider from "./authProvider";
 import Cookies from "./helpers/Cookies";

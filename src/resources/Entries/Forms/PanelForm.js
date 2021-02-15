@@ -1,5 +1,5 @@
 import * as React from "react";
-import {DeleteButton, FormWithRedirect, SaveButton, ReferenceInput, SelectInput, TextInput} from "react-admin";
+import { FormWithRedirect, SaveButton, ReferenceInput, SelectInput, TextInput} from "react-admin";
 import {Grid, Toolbar} from "@material-ui/core";
 import RichTextInput from "ra-input-rich-text";
 import StatusSelect from "../Components/StatusSelect";
