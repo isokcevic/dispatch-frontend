@@ -4,7 +4,7 @@ import strapiProvider from 'ra-strapi-rest';
 import authProvider from "./authProvider";
 import Cookies from "./helpers/Cookies";
 
-import Entries from './Entries'
+import Entries from './resources/Entries'
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {

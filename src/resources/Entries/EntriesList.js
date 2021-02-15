@@ -10,7 +10,7 @@ import {
     TextField,
     TextInput
 } from "react-admin";
-import EntryPanelForm from "./Forms/EntryPanelForm";
+import PanelForm from "./Forms/PanelForm";
 import DescriptionField from "./Components/DescriptionField";
 
 const EntriesList = props => (
@@ -42,7 +42,7 @@ const EntriesFilter = (props) => (
 
 const EntriesPanel = props => (
     <Edit {...props} title="" >
-        <EntryPanelForm />
+        <PanelForm />
     </Edit>
 );
 

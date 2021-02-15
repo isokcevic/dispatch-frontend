@@ -5,7 +5,7 @@ import RichTextInput from "ra-input-rich-text";
 import StatusSelect from "../Components/StatusSelect";
 
 
-const EntryPanelForm = props => (
+const PanelForm = props => (
     <FormWithRedirect {...props} render={renderForm} />
 );
 
@@ -53,4 +53,4 @@ const renderForm = formProps => (
     </form>
 );
 
-export default EntryPanelForm;
+export default PanelForm;
